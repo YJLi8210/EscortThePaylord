@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace KartGame.KartSystems
 {
@@ -9,6 +10,10 @@ namespace KartGame.KartSystems
     /// </summary>
     public class KeyboardInput : MonoBehaviour, IInput
     {
+        UIButton shiftButton;
+        Joystick virtualJoystick;
+        public bool isShiftButtonPressed = false;
+        public bool isShiftButtonDown = false;
         public float Acceleration
         {
             get { return m_Acceleration; }
@@ -45,21 +50,32 @@ namespace KartGame.KartSystems
 
         void Update ()
         {
-            if (Input.GetKey (KeyCode.UpArrow))
+            shiftButton = FindObjectOfType<UIButton>();
+            virtualJoystick = FindObjectOfType<Joystick>();
+            //Debug.Log("hori: " + virtualJoystick.Horizontal);
+            //Debug.Log("vertical: " + virtualJoystick.Vertical);
+
+            //if (shiftButton != null)
+            //{
+                //Debug.Log("Found button");
+            //}
+            if (Input.GetKey (KeyCode.UpArrow) || virtualJoystick.Vertical > 0.0f)
                 m_Acceleration = 1f;
-            else if (Input.GetKey (KeyCode.DownArrow))
+            else if (Input.GetKey (KeyCode.DownArrow) || virtualJoystick.Vertical < 0.0f)
                 m_Acceleration = -1f;
             else
                 m_Acceleration = 0f;
 
-            if (Input.GetKey (KeyCode.LeftArrow) && !Input.GetKey (KeyCode.RightArrow))
+            if ((Input.GetKey (KeyCode.LeftArrow) && !Input.GetKey (KeyCode.RightArrow)) 
+                    || virtualJoystick.Horizontal < 0.0f)
                 m_Steering = -1f;
-            else if (!Input.GetKey (KeyCode.LeftArrow) && Input.GetKey (KeyCode.RightArrow))
+            else if ((!Input.GetKey (KeyCode.LeftArrow) && Input.GetKey (KeyCode.RightArrow))
+                       || virtualJoystick.Horizontal > 0.0f)
                 m_Steering = 1f;
             else
                 m_Steering = 0f;
 
-            m_HopHeld = Input.GetKey (KeyCode.Space);
+            m_HopHeld = (Input.GetKey (KeyCode.Space) || isShiftButtonPressed);
 
             if (m_FixedUpdateHappened)
             {
@@ -70,9 +86,14 @@ namespace KartGame.KartSystems
                 m_FirePressed = false;
             }
 
-            m_HopPressed |= Input.GetKeyDown (KeyCode.Space);
+            m_HopPressed |= ((Input.GetKeyDown (KeyCode.Space) || isShiftButtonDown));
             m_BoostPressed |= Input.GetKeyDown (KeyCode.RightShift);
             m_FirePressed |= Input.GetKeyDown (KeyCode.RightControl);
+
+        }
+
+        public void UIShiftButtonPressed()
+        {
         }
 
         void FixedUpdate ()
