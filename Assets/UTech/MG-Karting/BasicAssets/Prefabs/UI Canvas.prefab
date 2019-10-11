@@ -203,7 +203,7 @@ PrefabInstance:
     - target: {fileID: 7607579068174295694, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_Name
-      value: Credits
+      value: Team
       objectReference: {fileID: 0}
     - target: {fileID: 7607579068174295694, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
@@ -318,12 +318,12 @@ PrefabInstance:
     - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_text
-      value: Credits
+      value: Team Members
       objectReference: {fileID: 0}
     - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
@@ -335,33 +335,48 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_text
-      value: '[This is your Fourth Menu Screen]
+      value: 'Sheng-Kai Tang (Lead Engineer - Gameplay and AI)
 
+        Sicheng Chu (Associate Engineer - Control and System)
 
-        You could use this area to display game credits or other information.'
+        Lihsin Lin (Associate Enigneer - Items)
+
+        Yujie Lee (Game Designer - Level and UI Design)
+
+        Yihan Zhou (Game Designer - Game mechanics)'
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 104
+      value: 234
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 18
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 18
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
@@ -841,6 +856,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main
       objectReference: {fileID: 0}
+    - target: {fileID: 7607579068174295694, guid: a7699e394e3ea4941b8b3b315a2280cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7607579068174295695, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -949,67 +969,57 @@ PrefabInstance:
     - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_text
-      value: Kart Game Template
+      value: Simpson Fan Club Presents
       objectReference: {fileID: 0}
     - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 18
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7607579068389748888, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_text
-      value: '[This is your First Menu Screen]
-
-
-        The controls for this template are:
-
-
-        - Arrow keys to Move
-
-        - Space bar to Jump
-
-        - Hold the Space bar to Drift
-
-        - Press the R key to Reset the Kart if you get stuck
-
-
-        - Press Escape to unpause and start playing!'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_fontSize
-      value: 21.55
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 240
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 52
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 10
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7699e394e3ea4941b8b3b315a2280cc, type: 3}
@@ -1165,30 +1175,27 @@ PrefabInstance:
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_text
-      value: '[This is your Second Menu Screen]
-
-
-        You could use this area to implement a UI for changing settings.'
+      value: Coming soon
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 99
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 18
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 18
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
@@ -1198,6 +1205,11 @@ PrefabInstance:
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1344,7 +1356,7 @@ PrefabInstance:
     - target: {fileID: 3854812130382821519, guid: a52712b80a6dbc0418a24741c5a70352,
         type: 3}
       propertyPath: m_text
-      value: 'Credits
+      value: 'Team
 
 '
       objectReference: {fileID: 0}
@@ -1356,11 +1368,26 @@ PrefabInstance:
     - target: {fileID: 3854812130382821519, guid: a52712b80a6dbc0418a24741c5a70352,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3854812130382821519, guid: a52712b80a6dbc0418a24741c5a70352,
         type: 3}
       propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854812130382821519, guid: a52712b80a6dbc0418a24741c5a70352,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854812130382821519, guid: a52712b80a6dbc0418a24741c5a70352,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854812130382821519, guid: a52712b80a6dbc0418a24741c5a70352,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1511,31 +1538,29 @@ PrefabInstance:
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_text
-      value: '[This is your Third Menu Screen]
+      value: 'Left Touch Screen - control character
 
-
-        You could use this area to implement a UI for changing or explaining game
-        controls.'
+        Right Button - drift'
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 117
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 21
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 21
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9031310948966901772, guid: a7699e394e3ea4941b8b3b315a2280cc,
         type: 3}
