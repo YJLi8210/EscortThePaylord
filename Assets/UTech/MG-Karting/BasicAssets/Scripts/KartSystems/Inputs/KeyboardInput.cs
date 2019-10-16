@@ -67,10 +67,10 @@ namespace KartGame.KartSystems
                 m_Acceleration = 0f;
 
             if ((Input.GetKey (KeyCode.LeftArrow) && !Input.GetKey (KeyCode.RightArrow)) 
-                    || virtualJoystick.Horizontal < 0.0f)
+                    || virtualJoystick.Horizontal < -0.4f)
                 m_Steering = -1f;
             else if ((!Input.GetKey (KeyCode.LeftArrow) && Input.GetKey (KeyCode.RightArrow))
-                       || virtualJoystick.Horizontal > 0.0f)
+                       || virtualJoystick.Horizontal > 0.4f)
                 m_Steering = 1f;
             else
                 m_Steering = 0f;
