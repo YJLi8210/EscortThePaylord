@@ -11,12 +11,12 @@ public class AI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();        //接收NavMeshAgent
+        agent = GetComponent<NavMeshAgent>(); //接收NavMeshAgent
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target_obj.transform.position);    //讓方塊往目標物的座標移動
+        agent.SetDestination(target_obj.transform.position); //讓方塊往目標物的座標移動
     }
 }
