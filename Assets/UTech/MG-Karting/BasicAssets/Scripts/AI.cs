@@ -12,6 +12,7 @@ public class AI : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); //接收NavMeshAgent
+        //Destroy(this, 2.0f);
     }
 
     // Update is called once per frame

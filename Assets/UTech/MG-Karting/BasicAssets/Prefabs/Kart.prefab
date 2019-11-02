@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3763822634849867150}
   m_Layer: 0
   m_Name: Kart
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f292ffb948323c49ac31e54ff737ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShiftButtonPressed: 0
+  isShiftButtonDown: 0
 --- !u!114 &3763822634849867138
 MonoBehaviour:
   m_ObjectHideFlags: 0
