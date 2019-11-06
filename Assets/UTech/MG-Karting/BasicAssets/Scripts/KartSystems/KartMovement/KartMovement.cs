@@ -64,6 +64,15 @@ namespace KartGame.KartSystems
         [Tooltip ("When karts collide the movement is based on their weight difference and this additional velocity change.")]
         public float kartToKartBump = 10f;
 
+        // fields for dash
+        public float dashTime = 2.0f;
+        public float dashAcc = 150f;
+        public float dashTopSpeed = 500f;
+        private bool duringDash;
+        private float initialAcc;
+        private float initialTopSpeed;
+        private float dashTimeCounter;
+
         public UnityEvent OnBecomeAirborne;
         public UnityEvent OnBecomeGrounded;
         public UnityEvent OnHop;
@@ -110,6 +119,7 @@ namespace KartGame.KartSystems
         public bool IsGrounded => m_IsGrounded;
         public GroundInfo CurrentGroundInfo => m_CurrentGroundInfo;
 
+
         void Reset ()
         {
             groundLayers = LayerMask.GetMask ("Default");
@@ -128,6 +138,12 @@ namespace KartGame.KartSystems
 
             if (driver != null)
                 m_CurrentModifiers.Add ((IKartModifier)driver);
+
+            //dash
+            duringDash = false;
+            dashTimeCounter = dashTime;
+            initialAcc = defaultStats.acceleration;
+            initialTopSpeed = defaultStats.topSpeed;
         }
 
         void FixedUpdate ()
@@ -186,6 +202,37 @@ namespace KartGame.KartSystems
             
             m_Rigidbody.MoveRotation (rotationStream);
             m_Rigidbody.MovePosition (m_RigidbodyPosition + m_Movement);
+            HandleDash();
+        }
+
+        public void StartDash()
+        {
+            duringDash = true;
+            dashTimeCounter = dashTime;
+            defaultStats.acceleration = dashAcc;
+            defaultStats.topSpeed = dashTopSpeed;
+            Debug.Log("Start Dashing**************************************************");
+
+        }
+
+        void HandleDash()
+        {
+            if(!duringDash)
+            {
+                return;
+            }
+            dashTimeCounter -= Time.deltaTime;
+            Debug.Log("Dashing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            if(dashTimeCounter < 0f)
+            {
+                defaultStats.acceleration = initialAcc;
+                defaultStats.topSpeed = initialTopSpeed;
+                duringDash = false;
+                Debug.Log("End Dashing~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+            }
+
+
         }
 
         /// <summary>

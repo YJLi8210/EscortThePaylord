@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using KartGame.KartSystems;
 public class BasicEdibleItem : MonoBehaviour
 {
     private Vector3 startPosition;
@@ -35,7 +35,11 @@ public class BasicEdibleItem : MonoBehaviour
 
         if (other.gameObject.tag.Equals("Player") || other.gameObject.name.Equals("Kart"))
         {
+            KartMovement km = other.gameObject.GetComponent<KartMovement>();
+            km.StartDash();
             this.gameObject.SetActive(false);
+            Destroy(gameObject);
+
         }
     }
 
