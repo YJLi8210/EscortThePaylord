@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AccItem : MonoBehaviour
+public class BombEdibleItem : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

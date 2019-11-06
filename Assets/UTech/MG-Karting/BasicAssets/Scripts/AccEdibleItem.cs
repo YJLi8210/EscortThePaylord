@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using KartGame.KartSystems;
-public class BasicEdibleItem : MonoBehaviour
+public class AccEdibleItem : MonoBehaviour
 {
     private Vector3 startPosition;
     float timeCounter = 0f;
