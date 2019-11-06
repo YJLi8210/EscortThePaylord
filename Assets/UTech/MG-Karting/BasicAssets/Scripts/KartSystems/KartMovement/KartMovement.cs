@@ -64,15 +64,6 @@ namespace KartGame.KartSystems
         [Tooltip ("When karts collide the movement is based on their weight difference and this additional velocity change.")]
         public float kartToKartBump = 10f;
 
-        // fields for dash
-        public float dashTime = 2.0f;
-        public float dashAcc = 150f;
-        public float dashTopSpeed = 500f;
-        private bool duringDash;
-        private float initialAcc;
-        private float initialTopSpeed;
-        private float dashTimeCounter;
-
         public UnityEvent OnBecomeAirborne;
         public UnityEvent OnBecomeGrounded;
         public UnityEvent OnHop;
@@ -119,6 +110,14 @@ namespace KartGame.KartSystems
         public bool IsGrounded => m_IsGrounded;
         public GroundInfo CurrentGroundInfo => m_CurrentGroundInfo;
 
+        // fields for dash
+        public float dashTime;
+        public float dashAcc;
+        public float dashTopSpeed;
+        private bool duringDash;
+        private float initialAcc;
+        private float initialTopSpeed;
+        private float dashTimeCounter;
 
         void Reset ()
         {
@@ -144,7 +143,10 @@ namespace KartGame.KartSystems
             dashTimeCounter = dashTime;
             initialAcc = defaultStats.acceleration;
             initialTopSpeed = defaultStats.topSpeed;
-        }
+            dashTime = 2.0f;
+            dashAcc = 20f;
+            dashTopSpeed = 30f;
+    }
 
         void FixedUpdate ()
         {
