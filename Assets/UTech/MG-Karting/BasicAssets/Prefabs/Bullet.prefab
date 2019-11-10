@@ -121,3 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b003671db8b840b4eadd4b836c16c405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 2
+  explosopnEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 3}
