@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - DestroyCollision
   - DestuctTrigger
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
