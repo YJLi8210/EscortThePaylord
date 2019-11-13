@@ -45316,6 +45316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b022b3f53227dab4ebf639160555c6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerObject: {fileID: 0}
 --- !u!65 &1388116311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63801,6 +63802,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4944909374175690203, guid: be4f1341ad0d4e9458c493e2edce5129,
+        type: 3}
+      propertyPath: timerObject
+      value: 
+      objectReference: {fileID: 1516233607}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be4f1341ad0d4e9458c493e2edce5129, type: 3}
 --- !u!1001 &8473932218178274596

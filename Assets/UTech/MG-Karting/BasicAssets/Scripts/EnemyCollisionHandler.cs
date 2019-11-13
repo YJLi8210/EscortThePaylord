@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EnemyCollisionHandler : MonoBehaviour
 {
+    public GameObject timerObject;
+    private Timer timerScript;
     // Start is called before the first frame update
     void Start()
     {
-
+        if (timerObject != null)
+            timerScript = timerObject.GetComponent<Timer>();
     }
 
     // Update is called once per frame
@@ -21,6 +24,9 @@ public class EnemyCollisionHandler : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player") || other.gameObject.name.Equals("Kart"))
         {
+            if(timerScript != null)
+                timerScript.SaveToJsonLocalFile();
+
             StartCoroutine(EndGame());
         }
     }
@@ -33,7 +39,6 @@ public class EnemyCollisionHandler : MonoBehaviour
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainMenu");
-
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {

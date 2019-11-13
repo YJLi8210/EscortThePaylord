@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -10,6 +12,14 @@ public class Timer : MonoBehaviour
     private float secondsCount;
     private int minuteCount;
     private int hourCount;
+
+    public struct TimeRecord
+    {
+        public string sceneName;
+        public int hour;
+        public int minute;
+        public float second;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +44,58 @@ public class Timer : MonoBehaviour
             hourCount++;
             minuteCount = 0;
         }
+    }
+    private bool isBestPerformance()
+    {
+        string filepath = "Assets/Record" + SceneManager.GetActiveScene().name + ".tr";
+        string json = File.ReadAllText(filepath);
+        //Debug.Log("Recored json: " + json);
+
+        TimeRecord historyRecord = JsonUtility.FromJson<TimeRecord>(json);
+        if (historyRecord.hour < hourCount)
+        {
+            return true;
+        } else if (historyRecord.hour > hourCount)
+        {
+            return false;
+        } else
+        {
+            if (historyRecord.minute < minuteCount)
+            {
+                return true;
+            } else if (historyRecord.minute > minuteCount)
+            {
+                return false;
+            } else
+            {
+                if(historyRecord.second < secondsCount)
+                {
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            }
+        }
+
+    }
+    public void SaveToJsonLocalFile()
+    {
+        //Debug.Log(isBestPerformance());
+        if(!isBestPerformance())
+        {
+            return;
+        }
+        TimeRecord tr = new TimeRecord();
+        tr.sceneName = SceneManager.GetActiveScene().name;
+        tr.hour = hourCount;
+        tr.minute = minuteCount;
+        tr.second = secondsCount;
+        string json = JsonUtility.ToJson(tr);
+        //Debug.Log(json);
+        string filepath = "Assets/Record" + tr.sceneName + ".tr";
+        //StreamWriter writer = new StreamWriter(filepath, true);
+        //writer.Write(json);
+        File.WriteAllText(filepath, json);
     }
 }
