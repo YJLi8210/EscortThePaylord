@@ -18,15 +18,38 @@ public class RecordManager : MonoBehaviour
     {
         Timer.TimeRecord historyRecord;
         string level1Filepath = "Assets/Recordmap.tr";
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            level1Filepath = Application.persistentDataPath + "/Recordmap.tr";
+        }
+        
         string lvl1jJson = File.ReadAllText(level1Filepath);
-        historyRecord = JsonUtility.FromJson<Timer.TimeRecord>(lvl1jJson);
-        string timeText = historyRecord.hour + "h:" + historyRecord.minute.ToString("00") + "m:" + ((int)historyRecord.second).ToString("00") + "s";
-        Level1Text.text += "(" + timeText + ")";
+        if(lvl1jJson != null && lvl1jJson.Length > 2)
+        {
+            historyRecord = JsonUtility.FromJson<Timer.TimeRecord>(lvl1jJson);
+            string timeText = historyRecord.hour + "h:" + historyRecord.minute.ToString("00") + "m:" + ((int)historyRecord.second).ToString("00") + "s";
+            Level1Text.text += "(" + timeText + ")";
+        } else
+        {
+            Level1Text.text += "(No Record)";
+        }
+
 
         string level2Filepath = "Assets/RecordMap2.tr";
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            level1Filepath = Application.persistentDataPath + "/RecordMap2.tr";
+        }
         string lvl2jJson = File.ReadAllText(level2Filepath);
-        historyRecord = JsonUtility.FromJson<Timer.TimeRecord>(lvl2jJson);
-        timeText = historyRecord.hour + "h:" + historyRecord.minute.ToString("00") + "m:" + ((int)historyRecord.second).ToString("00") + "s";
-        Level2Text.text += "(" + timeText + ")";
+        if (lvl2jJson != null && lvl2jJson.Length > 2)
+        {
+            historyRecord = JsonUtility.FromJson<Timer.TimeRecord>(lvl2jJson);
+            string timeText = historyRecord.hour + "h:" + historyRecord.minute.ToString("00") + "m:" + ((int)historyRecord.second).ToString("00") + "s";
+            Level2Text.text += "(" + timeText + ")";
+        }
+        else
+        {
+            Level2Text.text += "(No Record)";
+        }
     }
 }
