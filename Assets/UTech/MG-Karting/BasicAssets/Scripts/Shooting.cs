@@ -15,7 +15,7 @@ public class Shooting : MonoBehaviour
         bulletAudio = GetComponent<AudioSource>();
     }
 
-    void Fire()
+    public void Fire()
     {
         GameObject tempBullet = Instantiate(bullet, transform.position, transform.rotation) as GameObject;
         Rigidbody tempRigidBodyBullet = tempBullet.GetComponent<Rigidbody>();
