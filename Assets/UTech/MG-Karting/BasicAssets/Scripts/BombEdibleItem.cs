@@ -42,7 +42,7 @@ public class BombEdibleItem : MonoBehaviour
             bomb = GameObject.Find("Bomb");
             if(bomb != null)
             {
-                bomb.GetComponent<Bomb>().Boom();
+                bomb.GetComponent<Bomb>().Launch();
             }
             this.gameObject.SetActive(false);
             Destroy(gameObject);

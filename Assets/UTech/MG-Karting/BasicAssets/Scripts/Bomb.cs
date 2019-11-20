@@ -7,6 +7,7 @@ public class Bomb : MonoBehaviour
 {
     private HashSet<GameObject> enemies;
     CapsuleCollider explosionRange;
+    public GameObject bombPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,18 @@ public class Bomb : MonoBehaviour
         foreach(GameObject e in enemies)
         {
             Destroy(e);
+        }
+        enemies.Clear();
+    }
+
+    public void Launch()
+    {
+        foreach (GameObject e in enemies)
+        {
+            Vector3 offsetVector = new Vector3(0f, 20f, 0f);
+            GameObject bomb = Instantiate(bombPrefab, e.transform.position + offsetVector, e.transform.rotation) as GameObject;
+            BombMovement bm = bomb.GetComponent<BombMovement>();
+            bm.SetTarget(e);
         }
         enemies.Clear();
     }
