@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EnemyCollisionHandler : MonoBehaviour
 {
+    public GameObject explosionEffect;
+    public float lingerTime = 2.5f;
     public GameObject timerObject;
     private Timer timerScript;
+    private bool ifEndGame = false;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +21,23 @@ public class EnemyCollisionHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EndGame();
+    }
 
+    void EndGame()
+    {
+        if (!ifEndGame)
+        {
+            return;
+        }
+
+        lingerTime -= Time.fixedDeltaTime;
+        //player.GetComponent<Rigidbody>().velocity = new Vector3();
+        if(lingerTime <= 0f)
+        {
+
+            StartCoroutine(GoToMainScene());
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,12 +46,16 @@ public class EnemyCollisionHandler : MonoBehaviour
         {
             if(timerScript != null)
                 timerScript.SaveToJsonLocalFile();
-
-            StartCoroutine(EndGame());
+            ifEndGame = true;
+            //player = other.gameObject;
+            Destroy(other.gameObject);
+            other.attachedRigidbody.velocity = new Vector3();
+            Instantiate(explosionEffect, other.transform.position, other.transform.rotation);
+            //StartCoroutine(EndGame());
         }
     }
 
-    IEnumerator EndGame()
+    IEnumerator GoToMainScene()
     {
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.

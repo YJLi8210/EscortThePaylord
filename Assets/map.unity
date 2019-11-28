@@ -37974,7 +37974,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175779212}
-  m_LocalRotation: {x: 0.038215764, y: 0.00000003658099, z: -0.0000005005943, w: 0.99926955}
+  m_LocalRotation: {x: 0.03821578, y: 0.0000000020585058, z: -0.00000049927405, w: 0.99926955}
   m_LocalPosition: {x: 16, y: 1.75, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -44009,16 +44009,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3763822634849867138, guid: 8a2015a9601d162459389c9b9d1437fc,
-        type: 3}
-      propertyPath: defaultStats.acceleration
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3763822634849867138, guid: 8a2015a9601d162459389c9b9d1437fc,
-        type: 3}
-      propertyPath: defaultStats.topSpeed
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 3763822634849867143, guid: 8a2015a9601d162459389c9b9d1437fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44154,6 +44144,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3763822634849867138, guid: 8a2015a9601d162459389c9b9d1437fc,
+        type: 3}
+      propertyPath: defaultStats.acceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763822634849867138, guid: 8a2015a9601d162459389c9b9d1437fc,
+        type: 3}
+      propertyPath: defaultStats.topSpeed
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a2015a9601d162459389c9b9d1437fc, type: 3}
 --- !u!1 &1388116304 stripped
@@ -44187,6 +44187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b022b3f53227dab4ebf639160555c6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 0}
+  lingerTime: 1.5
   timerObject: {fileID: 0}
 --- !u!65 &1388116311
 BoxCollider:
@@ -60103,7 +60105,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110853102}
-  m_LocalRotation: {x: 0.038215764, y: 0.00000003658099, z: -0.0000005005943, w: 0.99926955}
+  m_LocalRotation: {x: 0.03821578, y: 0.0000000020585058, z: -0.00000049927405, w: 0.99926955}
   m_LocalPosition: {x: 16, y: 1.75, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -61860,6 +61862,12 @@ PrefabInstance:
       propertyPath: timerObject
       value: 
       objectReference: {fileID: 1516233607}
+    - target: {fileID: 4944909374175690203, guid: be4f1341ad0d4e9458c493e2edce5129,
+        type: 3}
+      propertyPath: explosionEffect
+      value: 
+      objectReference: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be4f1341ad0d4e9458c493e2edce5129, type: 3}
 --- !u!1001 &8473932218178274596
