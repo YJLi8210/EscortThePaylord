@@ -71487,7 +71487,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b022b3f53227dab4ebf639160555c6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerObject: {fileID: 0}
+  explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 3}
+  lingerTime: 2.5
+  timerObject: {fileID: 851697154}
 --- !u!114 &2066439755
 MonoBehaviour:
   m_ObjectHideFlags: 2
