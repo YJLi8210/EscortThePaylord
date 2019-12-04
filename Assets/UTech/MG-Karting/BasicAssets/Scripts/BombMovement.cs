@@ -46,7 +46,7 @@ public class BombMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Equals("PoliceCar(Clone)"))
+        if ((other.transform.tag.Equals("Enemy") || other.gameObject.name.Equals("sherman(Clone)")))
         {
             Destroy(other.gameObject);
             Explode();

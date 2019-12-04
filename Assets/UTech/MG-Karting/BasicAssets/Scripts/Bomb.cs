@@ -35,17 +35,20 @@ public class Bomb : MonoBehaviour
     {
         foreach (GameObject e in enemies)
         {
-            Vector3 offsetVector = new Vector3(0f, 20f, 0f);
-            GameObject bomb = Instantiate(bombPrefab, e.transform.position + offsetVector, e.transform.rotation) as GameObject;
-            BombMovement bm = bomb.GetComponent<BombMovement>();
-            bm.SetTarget(e);
+            if (e != null)
+            {
+                Vector3 offsetVector = new Vector3(0f, 20f, 0f);
+                GameObject bomb = Instantiate(bombPrefab, e.transform.position + offsetVector, e.transform.rotation) as GameObject;
+                BombMovement bm = bomb.GetComponent<BombMovement>();
+                bm.SetTarget(e);
+            }
         }
         enemies.Clear();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Equals("PoliceCar(Clone)") && !enemies.Contains(other.gameObject))
+        if ((other.transform.tag.Equals("Enemy") || other.gameObject.name.Equals("sherman(Clone)")) && !enemies.Contains(other.gameObject))
         {
             enemies.Add(other.gameObject);
         }
@@ -53,7 +56,7 @@ public class Bomb : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name.Equals("PoliceCar(Clone)") && enemies.Contains(other.gameObject))
+        if ((other.transform.tag.Equals("Enemy") || other.gameObject.name.Equals("sherman(Clone)")) && enemies.Contains(other.gameObject))
         {
             enemies.Remove(other.gameObject);
         }

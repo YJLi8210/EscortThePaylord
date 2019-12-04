@@ -24,7 +24,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag.Equals("Enemy") && !hasExploded)
+        if ((other.transform.tag.Equals("Enemy") || other.gameObject.name.Equals("sherman(Clone)")) && !hasExploded)
         {
             //Debug.Log("Collision");
             Explode();
