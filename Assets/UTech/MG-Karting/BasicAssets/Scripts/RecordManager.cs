@@ -17,14 +17,9 @@ public class RecordManager : MonoBehaviour
     void LoadBestHistory()
     {
         Timer.TimeRecord historyRecord;
-        string level1Filepath = "Assets/Recordmap.tr";
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            level1Filepath = Application.persistentDataPath + "/Recordmap.tr";
-        }
-        
-        string lvl1jJson = File.ReadAllText(level1Filepath);
-        if(lvl1jJson != null && lvl1jJson.Length > 2)
+
+        string lvl1jJson = PlayerPrefs.GetString("map", "");
+        if (lvl1jJson != null && lvl1jJson.Length > 2)
         {
             historyRecord = JsonUtility.FromJson<Timer.TimeRecord>(lvl1jJson);
             string timeText = historyRecord.hour + "h:" + historyRecord.minute.ToString("00") + "m:" + ((int)historyRecord.second).ToString("00") + "s";
@@ -34,13 +29,7 @@ public class RecordManager : MonoBehaviour
             Level1Text.text += "(No Record)";
         }
 
-
-        string level2Filepath = "Assets/RecordMap2.tr";
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            level1Filepath = Application.persistentDataPath + "/RecordMap2.tr";
-        }
-        string lvl2jJson = File.ReadAllText(level2Filepath);
+        string lvl2jJson = PlayerPrefs.GetString("Map2", "");
         if (lvl2jJson != null && lvl2jJson.Length > 2)
         {
             historyRecord = JsonUtility.FromJson<Timer.TimeRecord>(lvl2jJson);

@@ -47,13 +47,10 @@ public class Timer : MonoBehaviour
     }
     private bool isBestPerformance()
     {
-        string filepath = "Assets/Record" + SceneManager.GetActiveScene().name + ".tr";
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            filepath = Application.persistentDataPath + "/Record" + SceneManager.GetActiveScene().name + ".tr";
-        }
-        string json = File.ReadAllText(filepath);
-        if(json == null || json.Length == 0)
+
+        string json = PlayerPrefs.GetString(SceneManager.GetActiveScene().name, "");
+
+        if (json == null || json.Length == 0 || json.Equals(""))
         {
             return true;
         }
@@ -100,14 +97,9 @@ public class Timer : MonoBehaviour
         tr.minute = minuteCount;
         tr.second = secondsCount;
         string json = JsonUtility.ToJson(tr);
-        //Debug.Log(json);
-        string filepath = "Assets/Record" + tr.sceneName + ".tr";
-        if(Application.platform == RuntimePlatform.Android)
-        {
-            filepath = Application.persistentDataPath + "/Record" + tr.sceneName + ".tr";
-        }
-        //StreamWriter writer = new StreamWriter(filepath, true);
-        //writer.Write(json);
-        File.WriteAllText(filepath, json);
+
+        PlayerPrefs.SetString(tr.sceneName,json);
+        //string temp = PlayerPrefs.GetString(tr.sceneName,"");
+        //Debug.Log(temp);
     }
 }
