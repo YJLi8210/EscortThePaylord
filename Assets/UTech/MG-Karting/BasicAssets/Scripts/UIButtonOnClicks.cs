@@ -6,7 +6,7 @@ public class UIButtonOnClicks : MonoBehaviour
 {
     public GameObject myBulletHolder;
 
-    public int MaxAmmo = 10;
+    public int MaxAmmo = 3;
     public int CurrentAmmo;
     public float ReloadTime = 5.0f;
     private bool isReloading = false;

@@ -7,7 +7,7 @@ public class Shooting : MonoBehaviour
     float bulletSpeed = 5500;
     public GameObject bullet;
 
-    public int MaxAmmo = 10;
+    public int MaxAmmo = 3;
     private int CurrentAmmo;
     public float ReloadTime = 5.0f;
     private bool isReloading = false;

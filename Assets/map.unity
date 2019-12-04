@@ -44206,6 +44206,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 879205186741910267, guid: 8a2015a9601d162459389c9b9d1437fc,
+        type: 3}
+      propertyPath: MaxAmmo
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a2015a9601d162459389c9b9d1437fc, type: 3}
 --- !u!1 &1388116304 stripped
