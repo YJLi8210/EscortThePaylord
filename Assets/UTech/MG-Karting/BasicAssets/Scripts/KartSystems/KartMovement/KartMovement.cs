@@ -119,6 +119,12 @@ namespace KartGame.KartSystems
         private float initialTopSpeed;
         private float dashTimeCounter;
 
+        public float poisonTime;
+        public float poisonAcc;
+        public float poisonTopSpeed;
+        private bool duringPoison;
+        private float poisonTimeCounter;
+
         void Reset ()
         {
             groundLayers = LayerMask.GetMask ("Default");
@@ -146,7 +152,13 @@ namespace KartGame.KartSystems
             dashTime = 2.0f;
             dashAcc = 20f;
             dashTopSpeed = 30f;
-    }
+
+            duringPoison = false;
+            poisonTimeCounter = poisonTime;
+            poisonTime = 3.0f;
+            poisonAcc = 5f;
+            poisonTopSpeed = 5f;
+        }
 
         void FixedUpdate ()
         {
@@ -205,6 +217,7 @@ namespace KartGame.KartSystems
             m_Rigidbody.MoveRotation (rotationStream);
             m_Rigidbody.MovePosition (m_RigidbodyPosition + m_Movement);
             HandleDash();
+            HandlePoison();
         }
 
         public void StartDash()
@@ -214,6 +227,16 @@ namespace KartGame.KartSystems
             defaultStats.acceleration = dashAcc;
             defaultStats.topSpeed = dashTopSpeed;
             Debug.Log("Start Dashing**************************************************");
+
+        }
+
+        public void StartPoison()
+        {
+            duringPoison = true;
+            poisonTimeCounter = poisonTime;
+            defaultStats.acceleration = poisonAcc;
+            defaultStats.topSpeed = poisonTopSpeed;
+            Debug.Log("Start Poison!");
 
         }
 
@@ -233,8 +256,24 @@ namespace KartGame.KartSystems
                 Debug.Log("End Dashing~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
             }
+        }
 
+        void HandlePoison()
+        {
+            if (!duringPoison)
+            {
+                return;
+            }
 
+            poisonTimeCounter -= Time.deltaTime;
+            Debug.Log("Poison!");
+            if (poisonTimeCounter < 0f)
+            {
+                defaultStats.acceleration = initialAcc;
+                defaultStats.topSpeed = initialTopSpeed;
+                duringPoison = false;
+                Debug.Log("End Poison!");
+            }
         }
 
         /// <summary>
