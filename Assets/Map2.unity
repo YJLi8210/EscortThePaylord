@@ -61206,7 +61206,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Enemies: {fileID: 1071428933}
-  spawntime: 1
+  spawntime: 15
 --- !u!4 &1788828139
 Transform:
   m_ObjectHideFlags: 0
